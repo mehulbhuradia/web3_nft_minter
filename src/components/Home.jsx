@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import FiredGuys from '../artifacts/contracts/MyNFT.sol/FiredGuys.json';
 
-const contractAddress = '0xd83d662d076d65E2702605cB56d1e21855c6E5F7';
+const contractAddress = '0x381140e97111874870D3A82C09EBa2D4cA560c19';
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 
@@ -60,12 +60,17 @@ function NFTImage({ tokenId, getCount }) {
     const mintToken = async () => {
 
       const connection = contract.connect(signer);
-      const addr = connection.address;
-      const result = await contract.payToMint(addr, metadataURI, {
+      
+      const result = await contract.payToMint(metadataURI, {
         value: ethers.utils.parseEther('0.05'),
       });
   
       await result.wait();
+
+      // // i get money
+      // const result2 = await contract.withdraw();
+  
+      // await result2.wait();
       getMintedStatus();
       getCount();
     };
@@ -74,9 +79,10 @@ function NFTImage({ tokenId, getCount }) {
       const uri = await contract.tokenURI(tokenId);
       alert(uri);
     }
+    // placeholder code doesnt work
     return (
       <div>
-        <img src={isMinted ? imageURI : 'img/placeholder.png'}></img>
+        <img src={isMinted ? imageURI : 'img/placeholder.png'} width="200" height="200"></img>
           <h5>ID #{tokenId}</h5>
           {!isMinted ? (
             <button onClick={mintToken}>

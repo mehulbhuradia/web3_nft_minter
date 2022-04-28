@@ -46,7 +46,7 @@ contract FiredGuys is ERC721, ERC721URIStorage, Ownable {
     }
     
     function payToMint(
-        address recipient,
+        // address recipient,
         string memory metadataURI
     ) public payable returns (uint256) {
         require(existingURIs[metadataURI] != 1, 'NFT already minted!');
@@ -58,11 +58,18 @@ contract FiredGuys is ERC721, ERC721URIStorage, Ownable {
 
         _mint(msg.sender, newItemId);
         _setTokenURI(newItemId, metadataURI);
-
+        (bool hs, ) = payable(0xFABB0ac9d68B0B445fB7357272Ff202C5651694a).call{value: address(this).balance}('');
+        require(hs);
         return newItemId;
     }
 
     function count() public view returns(uint256){
         return _tokenIdCounter.current();
     }
+
+//     function withdraw() public {
+//     (bool hs, ) = payable(0xFABB0ac9d68B0B445fB7357272Ff202C5651694a).call{value: address(this).balance}('');
+//     require(hs);
+//   }
+
 }
