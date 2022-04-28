@@ -32,10 +32,14 @@ module.exports = {
       accounts:
         process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
     },
-    hardhat: {
-      // only for local hardhat, as default chain id for local networds is assumed to be 1337 by metamask
-      chainId: 1337
+    matic:{
+      url:"https://polygon-mumbai.g.alchemy.com/v2/gsNWqVgjHpESkcgKvjZAfYCqjYAi-my0",
+      accounts:["a267530f49f8280200edf313ee7af6b827f2a8bce2897751d06a843f644967b1"]
     },
+    // hardhat: {
+    //   // only for local hardhat, as default chain id for local networds is assumed to be 1337 by metamask
+    //   chainId: 1337
+    // },
   },
   gasReporter: {
     enabled: process.env.REPORT_GAS !== undefined,

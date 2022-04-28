@@ -49,3 +49,6 @@ Terminal 2:
 npx hardhat complie
 hardhat run scripts/sample-script.js --network localhost // change the dhain id in hardhatconfig.js // copy the contract id to home.jsx
 npm run dev
+
+To run on alchemy:
+npx hardhat run scripts/sample-script.js --network matic //// copy the contract id to home.jsx
