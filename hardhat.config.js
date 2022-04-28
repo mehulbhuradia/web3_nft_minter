@@ -34,7 +34,7 @@ module.exports = {
     },
     matic:{
       url:"https://polygon-mumbai.g.alchemy.com/v2/gsNWqVgjHpESkcgKvjZAfYCqjYAi-my0",
-      accounts:["a267530f49f8280200edf313ee7af6b827f2a8bce2897751d06a843f644967b1"]
+      accounts:["d6aa3f5a0aaff8498c660bb71207ba81d5adf39e4fd3bc7d4153da144216862e"]
     },
     // hardhat: {
     //   // only for local hardhat, as default chain id for local networds is assumed to be 1337 by metamask

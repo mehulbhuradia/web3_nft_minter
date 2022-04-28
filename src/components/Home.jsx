@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { ethers } from 'ethers';
 import FiredGuys from '../artifacts/contracts/MyNFT.sol/FiredGuys.json';
 
-const contractAddress = '0x381140e97111874870D3A82C09EBa2D4cA560c19';
+const contractAddress = '0xdAfA75CAFBE7eb55a37bE5cD67B5149ca826Fc14';
 
 const provider = new ethers.providers.Web3Provider(window.ethereum);
 

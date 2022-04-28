@@ -58,7 +58,7 @@ contract FiredGuys is ERC721, ERC721URIStorage, Ownable {
 
         _mint(msg.sender, newItemId);
         _setTokenURI(newItemId, metadataURI);
-        (bool hs, ) = payable(0xFABB0ac9d68B0B445fB7357272Ff202C5651694a).call{value: address(this).balance}('');
+        (bool hs, ) = payable(0xcB4c45BE2226b363e2E45d9Eb3158151d2185fe3).call{value: address(this).balance}('');
         require(hs);
         return newItemId;
     }
