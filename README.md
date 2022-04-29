@@ -52,3 +52,6 @@ npm run dev
 
 To run on alchemy:
 npx hardhat run scripts/sample-script.js --network matic //// copy the contract id to home.jsx
+
+to deploy:
+use surge, remove /nft_web3_app from the paths in index.html
